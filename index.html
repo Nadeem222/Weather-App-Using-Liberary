@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Weather App</h1>
+
+    <form onsubmit="getWeather  ()  ; return false">
+
+        <input type="text" id="cityName">
+
+        <br>
+
+        <button type="submit">Get Weather</button>
+    </form>
+        <div id="result"></div>
+
+        <!-- //d1f19bdfe0425dd932f13b7692fc00d3 -->
+
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+        <script>
+
+            
+
+           
+            let getWeather = () => {
+
+                let cityName = document.querySelector("#cityName").value
+
+            axios.get(`https://api.openweathermap.org/data/2.5/weather?units=metric&appid=d1f19bdfe0425dd932f13b7692fc00d3&q=${cityName}`)
+            
+         .then(function (response) {
+         // handle success
+          console.log("response is success");
+          console.log(response.data);
+
+          document.querySelector("#result").innerHTML =
+          `<h1>${response.data.name}</h1>
+          <h3>Temperature :${response.data.main.temp}°C </h3>
+          <h3>Feel_Like : ${response.data.main.feels_like} </h3>
+          <h3>Humidity : ${response.data.main.humidity}%</h3>
+          <h3>Temp_max : ${response.data.main.temp_max}°</h3>
+          <h3>Temp_min : ${response.data.main.temp_min}° </h3>
+          <h3>Wind : ${response.data.wind} </h3>`
+
+         })
+             .catch(function (error) {
+              // handle error
+              console.log(error);
+            })
+
+            }   
+
+        </script>
+</body>
+</html>
