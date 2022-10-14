@@ -5,57 +5,68 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Weather App</h1>
+    <div class="Weather-App">
+        <div class="container">
+            <h3 class="brand">The weather</h3>
+        </div>
+        <h1 class="temp">16&#176;</h1>
+        <div class="city-time">
+            <h1 class="name">Karachi</h1>
+            <small>
+                <span class="time">6.19</span>
 
-    <form onsubmit="getWeather  ()  ; return false">
+                ~
 
-        <input type="text" id="cityName">
+                <span class="date">
+                    Monday sep 19
+                </span>
+            </small>
+        </div>
+        <div>
+            <img 
+            src="" 
+            alt="icon"
+            class="icon"
+            width="50"
+            height="50"
+            >
+            <span class="condition">Cloudy</span>
+        </div>
+    
+    <div class="panel">
+        <form id="location input">
+            <input type="text" class="search" placeholder="search location...">
+            <button type="submit" class="submit">
+                <i class="fas fa-search"></i>
+            </button>
+        </form>
+        <ul class="cities">
+            <li>Karachi</li>
+            <li>Lahore</li>
+            <li>Islamabad</li>
+            <li>London</li>
+            <li>Paris</li>
+        </ul>
 
-        <br>
-
-        <button type="submit">Get Weather</button>
-    </form>
-        <div id="result"></div>
-
-        <!-- //d1f19bdfe0425dd932f13b7692fc00d3 -->
-
-        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-
-        <script>
-
-            
-
-           
-            let getWeather = () => {
-
-                let cityName = document.querySelector("#cityName").value
-
-            axios.get(`https://api.openweathermap.org/data/2.5/weather?units=metric&appid=d1f19bdfe0425dd932f13b7692fc00d3&q=${cityName}`)
-            
-         .then(function (response) {
-         // handle success
-          console.log("response is success");
-          console.log(response.data);
-
-          document.querySelector("#result").innerHTML =
-          `<h1>${response.data.name}</h1>
-          <h3>Temperature :${response.data.main.temp}°C </h3>
-          <h3>Feel_Like : ${response.data.main.feels_like} </h3>
-          <h3>Humidity : ${response.data.main.humidity}%</h3>
-          <h3>Temp_max : ${response.data.main.temp_max}°</h3>
-          <h3>Temp_min : ${response.data.main.temp_min}° </h3>
-          <h3>Wind : ${response.data.wind} </h3>`
-
-         })
-             .catch(function (error) {
-              // handle error
-              console.log(error);
-            })
-
-            }   
-
-        </script>
+        <ul class="detail">
+            <h4>Weather Detail</h4>
+            <li>
+                <span>Cloudy</span>
+                <span class="cloudy">89%</span>
+            </li>
+            <li>
+                <span>Humidity</span>
+                <span class="humidity">90%</span>
+            </li>
+            <li>
+                <span>Wind</span>
+                <span class="wind">89%</span>
+            </li>
+        </ul>
+    </div>
+</div>
 </body>
 </html>
