@@ -6,12 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
 </head>
 <body>
+    <div class="main">
     <div class="Weather-App">
+        <h3 class="brand">The weather</h3>
         <div class="container">
-            <h3 class="brand">The weather</h3>
-        <h1 class="temp">16&#176;</h1>
+        <h1 class="temp"></h1>
         <div class="city-time">
             <h1 class="name">Karachi</h1>
             <small>
@@ -24,10 +26,10 @@
                 </span>
             </small>
         </div>
-    </div>
-        <div>
+    
+        <div class="weather">
             <img 
-            src="" 
+            src="./icon/day/113.png" 
             alt="icon"
             class="icon"
             width="50"
@@ -35,9 +37,11 @@
             >
             <span class="condition">Cloudy</span>
         </div>
-    
+    </div>
+ </div>
+
     <div class="panel">
-        <form id="location input">
+        <form onsubmit="getWeather () ; return false" id="location input">
             <input type="text" class="search" placeholder="search location...">
             <button type="submit" class="submit">
                 <i class="fas fa-search"></i>
@@ -59,14 +63,26 @@
             </li>
             <li>
                 <span>Humidity</span>
-                <span class="humidity">90%</span>
+                <span class="humidity"></span>
             </li>
             <li>
                 <span>Wind</span>
                 <span class="wind">89%</span>
             </li>
+            <li>
+                <span>Feel_Like</span>
+                <span class="feels_like"></span>
+            </li>
+            <li>
+                <span>Min_Temp</span>
+                <span class="min_temp"></span>
+            </li>
         </ul>
     </div>
 </div>
+
+
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="main.js"></script>
 </body>
 </html>
