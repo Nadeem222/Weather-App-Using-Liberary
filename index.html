@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body id="aaa">
@@ -43,7 +44,7 @@
         <form onsubmit="getWeather () ; return false" id="location input">
             <input type="text" class="search" placeholder="search location...">
             <button type="submit" class="submit">
-                <i class="fas fa-search"></i>
+                <i class="bi bi-search"></i>></i>
             </button>
         </form>
         <ul class="cities">
@@ -58,7 +59,7 @@
             <h4>Weather Detail</h4>
             <li>
                 <span>Cloudy</span>
-                <span class="cloudy"></span>
+                <span class="cloudy" id="cloudy"></span>
             </li>
             <li>
                 <span>Humidity</span>

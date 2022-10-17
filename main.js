@@ -18,6 +18,7 @@ let getWeather = () => {
       // handle success
       console.log("response is success");
       console.log(response.data);
+      
       document.querySelector(".name").innerHTML =
         `${response.data.name}`
 
@@ -41,7 +42,7 @@ let getWeather = () => {
       // document.querySelector(".condition").innerHTML =
       //   `${response.data.weather[0].description}`
 
-      document.querySelector(".cloudy").innerHTML =
+      document.querySelector("#cloudy").innerHTML =
         `${response.data.weather[0].description}`
 
       document.querySelector(".time").innerHTML =
@@ -52,31 +53,115 @@ let getWeather = () => {
 
 
 
-      if (response.data.weather[0].description = "clear sky") {
+      if (response.data.weather[0].main === "Thunderstorm") {
 
         console.log(" i am scatered");
 
-        document.querySelector("#aaa").style.backgroundImage = `url('img/day/clear.jpg')`
+        document.querySelector("#aaa").style.backgroundImage = `url('img/night/thunderstrom.jpg')`
 
-        document.querySelector(".weather").innerHTML = 
-        `<img src="http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png"/>`
-
-        document.querySelector("#aaa").style.color = "#fff"
-
-      } else if (response.data.weather[0].description = "rainy") {
-        
-        document.querySelector("#aaa").style.backgroundImage = `url('img/day/Rainy.jpg')`
-
-        document.querySelector(".weather").innerHTML = 
-        `<img src="http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png"/>`
+        document.querySelector(".weather").innerHTML =
+          `<img src="http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png"/>`
 
         document.querySelector("#aaa").style.color = "#fff"
 
-      } else if (response.data.weather[0].description = "snowy") {
+      } else if (response.data.weather[0].msin === "Drizzle") {
+
+        document.querySelector("#aaa").style.backgroundImage = `url('img/night/drizzle.jpg')`
+
+        document.querySelector(".weather").innerHTML =
+          `<img src="http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png"/>`
+
+        document.querySelector("#aaa").style.color = "#fff"
+
+      } else if (response.data.weather[0].main === "Rain") {
+        document.querySelector("#aaa").style.backgroundImage = `url('img/day/rain.jpg')`
+
+        document.querySelector(".weather").innerHTML =
+          `<img src="http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png"/>`
+
+        document.querySelector("#aaa").style.color = "#fff"
+      }else if (response.data.weather[0].main === "Snow") {
         document.querySelector("#aaa").style.backgroundImage = `url('img/day/snowy.jpg')`
 
-        document.querySelector(".weather").innerHTML = 
-        `<img src="http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png"/>`
+        document.querySelector(".weather").innerHTML =
+          `<img src="http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png"/>`
+
+        document.querySelector("#aaa").style.color = "#fff"
+      }else if (response.data.weather[0].main === "Clear") {
+        document.querySelector("#aaa").style.backgroundImage = `url('img/day/clear.jpg')`
+
+        document.querySelector(".weather").innerHTML =
+          `<img src="http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png"/>`
+
+        document.querySelector("#aaa").style.color = "#fff"
+      }else if (response.data.weather[0].main === "Clouds") {
+        document.querySelector("#aaa").style.backgroundImage = `url('img/day/Cloudyday.jpeg.avif')`
+
+        document.querySelector(".weather").innerHTML =
+          `<img src="http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png"/>`
+
+        document.querySelector("#aaa").style.color = "#fff"
+      }else if (response.data.weather[0].main === "Mist") {
+        document.querySelector("#aaa").style.backgroundImage = `url('img/day/mist.jpg')`
+
+        document.querySelector(".weather").innerHTML =
+          `<img src="http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png"/>`
+
+        document.querySelector("#aaa").style.color = "#fff"
+      }else if (response.data.weather[0].main === "Smoke") {
+        document.querySelector("#aaa").style.backgroundImage = `url('img/day/smoke.jpg')`
+
+        document.querySelector(".weather").innerHTML =
+          `<img src="http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png"/>`
+
+        document.querySelector("#aaa").style.color = "#fff"
+      }else if (response.data.weather[0].main === "Haze") {
+        document.querySelector("#aaa").style.backgroundImage = `url('img/day/haze.jpg')`
+
+        document.querySelector(".weather").innerHTML =
+          `<img src="http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png"/>`
+
+        document.querySelector("#aaa").style.color = "#fff"
+      }else if (response.data.weather[0].main === "Dust") {
+        document.querySelector("#aaa").style.backgroundImage = `url('img/day/dust-storm.jpg')`
+
+        document.querySelector(".weather").innerHTML =
+          `<img src="http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png"/>`
+
+        document.querySelector("#aaa").style.color = "#fff"
+      }else if (response.data.weather[0].main === "Fog") {
+        document.querySelector("#aaa").style.backgroundImage = `url('img/day/snowy.jpg')`
+
+        document.querySelector(".weather").innerHTML =
+          `<img src="http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png"/>`
+
+        document.querySelector("#aaa").style.color = "#fff"
+      }else if (response.data.weather[0].main === "Sand") {
+        document.querySelector("#aaa").style.backgroundImage = `url('img/day/sand.jpg')`
+
+        document.querySelector(".weather").innerHTML =
+          `<img src="http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png"/>`
+
+        document.querySelector("#aaa").style.color = "#fff"
+      }else if (response.data.weather[0].main === "Ash") {
+        document.querySelector("#aaa").style.backgroundImage = `url('img/day/ash.jpg')`
+
+        document.querySelector(".weather").innerHTML =
+          `<img src="http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png"/>`
+
+        document.querySelector("#aaa").style.color = "#fff"
+      }else if (response.data.weather[0].main === "Squall") {
+        document.querySelector("#aaa").style.backgroundImage = `url('img/day/snowy.jpg')`
+
+        document.querySelector(".weather").innerHTML =
+          `<img src="http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png"/>`
+
+        document.querySelector("#aaa").style.color = "#fff"
+      }else if (response.data.weather[0].main === "Tornado") {
+        document.querySelector("#aaa").style.backgroundImage = `url('img/day/tornado.jpg')`
+
+        document.querySelector(".weather").innerHTML =
+          `<img src="http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png"/>`
 
         document.querySelector("#aaa").style.color = "#fff"
       }
