@@ -8,6 +8,9 @@
 let temp = Math.round(".temp")
 
 console.log(temp)
+
+
+
 let getWeather = () => {
 
   let cityName = document.querySelector(".search").value
@@ -18,6 +21,8 @@ let getWeather = () => {
       // handle success
       console.log("response is success");
       console.log(response.data);
+
+      
       
       document.querySelector(".name").innerHTML =
         `${response.data.name}`
