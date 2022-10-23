@@ -39,11 +39,11 @@ let getWeather = () => {
       document.querySelector(".max_temp").innerHTML =
         `${Math.round(response.data.main.temp_max)}°C`
 
-      // document.querySelector(".condition").innerHTML =
-      //   `${response.data.weather[0].description}`
+      document.querySelector(".condition").innerHTML =
+         `${response.data.weather[0].description}`
 
       document.querySelector("#cloudy").innerHTML =
-        `${response.data.weather[0].description}`
+        `${response.data.weather[0].main}`
 
       document.querySelector(".time").innerHTML =
         `${moment(response.data.dt * 1000).format("h:mm:ss a")}`
@@ -64,7 +64,7 @@ let getWeather = () => {
 
         document.querySelector("#aaa").style.color = "#fff"
 
-      } else if (response.data.weather[0].msin === "Drizzle") {
+      } else if (response.data.weather[0].main === "Drizzle") {
 
         document.querySelector("#aaa").style.backgroundImage = `url('img/night/drizzle.jpg')`
 
@@ -93,7 +93,7 @@ let getWeather = () => {
         document.querySelector(".weather").innerHTML =
           `<img src="http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png"/>`
 
-        document.querySelector("#aaa").style.color = "#fff"
+        document.querySelector("#aaa").style.color = "#black"
       }else if (response.data.weather[0].main === "Clouds") {
         document.querySelector("#aaa").style.backgroundImage = `url('img/day/Cloudyday.jpeg.avif')`
 
