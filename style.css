@@ -17,7 +17,6 @@ h1 , h3 {
 }
 .Weather-App{
     min-height: 100vh;
-    display: flex;
     height: 100vh;
 }
 .Weather-App ::before{
