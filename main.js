@@ -164,6 +164,14 @@ document.addEventListener("DOMContentLoaded", function () {
       })
 
   };
+  const locationForm = document.getElementById("location-input");
+  locationForm.addEventListener("submit", function (event) {
+    event.preventDefault();
+    const cityName = document.querySelector(".search").value;
+    if (cityName) {
+      getWeather(cityName);
+    }
+  });
 
   const cityItems = document.querySelectorAll(".cities > li");
   cityItems.forEach((item) => {

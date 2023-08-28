@@ -1,46 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Weather App</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body id="aaa">
     <div class="main">
         <div class="Weather-App">
-            <h3 class="brand">The weather</h3>
+            <h3 class="brand">The Weather</h3>
             <div class="container">
                 <h1 class="temp"></h1>
                 <div class="city-time">
                     <h1 class="name">Karachi</h1>
                     <small>
-                        <span class="time">6.19</span>
-
+                        <span class="time">6:19 AM</span>
                         ~
-
-                        <span class="date">
-                            Monday sep 19
-                        </span>
+                        <span class="date">Monday, September 19</span>
                     </small>
                 </div>
-
                 <div class="weather">
-                    <img alt="icon" class="icon" width="50" height="50">
+                    <img alt="weather icon" class="icon" width="50" height="50">
                     <span class="condition"></span>
                 </div>
             </div>
         </div>
-
         <div class="panel">
-            <form onsubmit="getWeather () ; return false" id="location input">
-                <input type="text" class="search" placeholder="search location...">
+            <form id="location-input">
+                <input type="text" class="search" placeholder="Search location...">
                 <button type="submit" class="submit">
-                    <i class="bi bi-search"></i>></i>
+                    <i class="bi bi-search"></i>
                 </button>
             </form>
             <ul class="cities">
@@ -50,9 +42,8 @@
                 <li>London</li>
                 <li>Paris</li>
             </ul>
-
             <ul class="detail">
-                <h4>Weather Detail</h4>
+                <h4>Weather Details</h4>
                 <li>
                     <span>Cloudy</span>
                     <span class="cloudy" id="cloudy"></span>
@@ -66,24 +57,22 @@
                     <span class="wind">89%</span>
                 </li>
                 <li>
-                    <span>Feel_Like</span>
+                    <span>Feels Like</span>
                     <span class="feels_like"></span>
                 </li>
                 <li>
-                    <span>Min_Temp</span>
+                    <span>Min Temp</span>
                     <span class="min_temp"></span>
                 </li>
                 <li>
-                    <span>Max_Temp</span>
+                    <span>Max Temp</span>
                     <span class="max_temp"></span>
                 </li>
             </ul>
         </div>
     </div>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="main.js"></script>
 </body>
-
 </html>
